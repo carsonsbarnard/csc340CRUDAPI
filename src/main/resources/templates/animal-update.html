@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Update Animal</title>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    form { width: 300px; margin: auto; }
+    label, input, textarea { display: block; margin-bottom: 10px; width: 100%; }
+    button { padding: 10px 20px; background-color: #007bff; color: white; border: none; cursor: pointer; }
+    button.cancel { background-color: #d9534f; }
+  </style>
+</head>
+<body>
+<h1 th:text="'Update Animal: ' + ${animal.name}"></h1>
+<form th:action="@{/animals/update/{animalId}(animalId=${animal.animalId})}" th:object="${animal}" method="post">
+  <label for="animalId">Animal ID:</label>
+  <input type="text" id="animalId" th:field="*{animalId}" readonly>
+  <label for="name">Animal Name:</label>
+  <input type="text" id="name" th:field="*{name}" required>
+  <label for="species">Species:</label>
+  <input type="text" id="species" th:field="*{species}" required>
+  <label for="habitat">Habitat:</label>
+  <input type="text" id="habitat" th:field="*{habitat}" required>
+  <label for="scientificName">Scientific Name:</label>
+  <input type="text" id="scientificName" th:field="*{scientificName}" required>
+  <label for="description">Description:</label>
+  <textarea id="description" th:field="*{description}" rows="5" required></textarea>
+  <button type="submit">Update Animal</button>
+  <a th:href="@{/animals/all}" class="cancel">Cancel</a>
+</form>
+</body>
+</html>

@@ -7,7 +7,7 @@ import java.util.Optional;
 // Interface to make the AnimalService class less messy
 public interface AnimalServiceInterface {
     List<Animal> getAllAnimals();
-    Optional<Animal> getAnimalById(Integer id);
+    Animal getAnimalById(Integer id);
     Animal createAnimal(Animal animal);
     Animal updateAnimal(Integer id, Animal animal);
     void deleteAnimal(Integer id);

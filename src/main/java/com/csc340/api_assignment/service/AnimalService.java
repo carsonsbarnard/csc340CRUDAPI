@@ -18,10 +18,9 @@ public class AnimalService implements AnimalServiceInterface {
     public List<Animal> getAllAnimals() {
         return animalRepository.findAll(); // Uses methods from AnimalRepository
     }
-
     @Override
-    public Optional<Animal> getAnimalById(Integer id) {
-        return animalRepository.findById(id);
+    public Animal getAnimalById(Integer id) {
+        return animalRepository.getReferenceById(id);
     }
 
     @Override

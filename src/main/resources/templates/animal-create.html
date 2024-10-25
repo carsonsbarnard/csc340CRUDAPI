@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create New Animal</title>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    form { width: 300px; }
+    label, input, textarea { display: block; margin-bottom: 10px; width: 100%; }
+    button { padding: 10px 20px; background-color: #28a745; color: white; border: none; }
+  </style>
+</head>
+<body>
+<h1>Create New Animal</h1>
+<form>
+  <label for="name">Animal Name:</label>
+  <input type="text" id="name" placeholder="Enter animal name" required>
+
+  <label for="description">Description:</label>
+  <textarea id="description" rows="5" placeholder="Enter description"></textarea>
+
+  <label for="habitat">Habitat:</label>
+  <input type="text" id="habitat" placeholder="Enter habitat">
+
+  <label for="diet">Diet:</label>
+  <input type="text" id="diet" placeholder="Enter diet">
+
+  <button type="submit">Create Animal</button>
+</form>
+<a href="animal-list.html">Back to Animal List</a>
+</body>
+</html>
