@@ -38,11 +38,14 @@ public class AnimalController {
         return "redirect:/animals/all";
     }
 
+    // Post Mapping for actually sending update through
     @PostMapping("/update/{animalId}")
     public String updateUser(@PathVariable int animalId, @ModelAttribute Animal animal) {
         animalService.updateAnimal(animalId, animal);
         return "redirect:/animals/all";
     }
+
+    // Get Mapping for update page
     @GetMapping("/update/{animalId}")
     public String editAnimal(@PathVariable int animalId, Model model){
         model.addAttribute("animal", animalService.getAnimalById(animalId));
